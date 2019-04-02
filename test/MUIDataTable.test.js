@@ -244,6 +244,16 @@ describe('<MUIDataTable />', function() {
     assert.deepEqual(state.rowsPerPageOptions, [5, 10, 15]);
   });
 
+  it('should correctly set searchText when provided in options', () => {
+    const options = {
+      searchText: 'testText',
+    };
+
+    const shallowWrapper = shallow(<MUIDataTable columns={columns} data={data} options={options} />);
+    const state = shallowWrapper.dive().state();
+    assert.deepEqual(state.searchText, 'testText');
+  });
+
   it('should render pagination when enabled in options', () => {
     const options = {
       pagination: true,
