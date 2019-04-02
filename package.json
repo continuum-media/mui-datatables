@@ -117,10 +117,5 @@
     ],
     "sourceMap": false,
     "instrument": false
-  },
-  "directories": {
-    "doc": "docs",
-    "example": "examples",
-    "test": "test"
   }
 }
