@@ -1,6 +1,6 @@
 {
   "name": "@continuum-media/mui-datatables",
-  "version": "2.0.0-beta.59",
+  "version": "1.0.0",
   "description": "Datatables for React using Material-UI",
   "main": "dist/index.js",
   "files": [
