@@ -35,6 +35,8 @@ class TableSearch extends React.Component {
     }
 
     this.props.onSearch(event.target.value);
+
+    this.setState({ value: event.target.value });
   };
 
   componentDidMount() {
@@ -64,6 +66,7 @@ class TableSearch extends React.Component {
             InputProps={{
               'aria-label': options.textLabels.toolbar.search,
             }}
+            defaultValue={options.searchText}
             onChange={this.handleTextChange}
             fullWidth={true}
             inputRef={el => (this.searchField = el)}

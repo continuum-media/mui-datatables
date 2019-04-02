@@ -106,6 +106,24 @@ describe('<TableToolbar />', function() {
     assert.strictEqual(actualResult.length, 0);
   });
 
+  it('should render a toolbar with the search bar showing if option.showSearch = true', () => {
+    const newOptions = { ...options, showSearch: true };
+    const mountWrapper = mount(
+      <TableToolbar columns={columns} data={data} options={newOptions} setTableAction={setTableAction} />,
+    );
+    const actualResult = mountWrapper.find(TableSearch);
+    assert.strictEqual(actualResult.length, 1);
+  });
+
+  it('should render a toolbar with the search bar hidden if option.showSearch = false', () => {
+    const newOptions = { ...options, showSearch: false };
+    const mountWrapper = mount(
+      <TableToolbar columns={columns} data={data} options={newOptions} setTableAction={setTableAction} />,
+    );
+    const actualResult = mountWrapper.find(TableSearch);
+    assert.strictEqual(actualResult.length, 0);
+  });
+
   it('should render a toolbar with a search clicking search icon', () => {
     const shallowWrapper = shallow(
       <TableToolbar columns={columns} data={data} options={options} setTableAction={setTableAction} />,

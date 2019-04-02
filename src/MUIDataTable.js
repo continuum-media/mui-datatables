@@ -107,6 +107,7 @@ class MUIDataTable extends React.Component {
       rowHover: PropTypes.bool,
       fixedHeader: PropTypes.bool,
       page: PropTypes.number,
+      searchText: PropTypes.string,
       count: PropTypes.number,
       rowsSelected: PropTypes.array,
       rowsPerPage: PropTypes.number,
@@ -116,6 +117,7 @@ class MUIDataTable extends React.Component {
       customSort: PropTypes.func,
       customSearch: PropTypes.func,
       search: PropTypes.bool,
+      showSearch: PropTypes.bool,
       print: PropTypes.bool,
       viewColumns: PropTypes.bool,
       download: PropTypes.bool,
@@ -216,6 +218,7 @@ class MUIDataTable extends React.Component {
       sortFilterList: true,
       sort: true,
       search: true,
+      showSearch: false,
       print: true,
       viewColumns: true,
       download: true,
@@ -248,8 +251,8 @@ class MUIDataTable extends React.Component {
     }
   };
 
-  setTableOptions(props) {
-    const optionNames = ['rowsPerPage', 'page', 'rowsSelected', 'rowsPerPageOptions'];
+  setTableOptions() {
+    const optionNames = ['rowsPerPage', 'page', 'rowsSelected', 'rowsPerPageOptions', 'searchText'];
     const optState = optionNames.reduce((acc, cur) => {
       if (this.options[cur] !== undefined) {
         acc[cur] = this.options[cur];
