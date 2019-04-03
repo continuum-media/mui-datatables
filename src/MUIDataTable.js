@@ -213,7 +213,7 @@ class MUIDataTable extends React.Component {
       fixedHeader: true,
       elevation: 4,
       rowsPerPage: 10,
-      rowsPerPageOptions: [10, 15, 100],
+      rowsPerPageOptions: [],
       filter: true,
       sortFilterList: true,
       sort: true,
